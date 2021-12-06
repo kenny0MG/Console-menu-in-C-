@@ -144,10 +144,17 @@ namespace ConsoleApp8
                 
 
                 Clear();
-
                
+
+
                 ForegroundColor = ConsoleColor.Red;
                 WriteLine("<<Если хотите вернуться в меню нажмите ecs>>");
+                ResetColor();
+                ForegroundColor = ConsoleColor.Yellow;
+
+
+                WriteLine(" \n<<Если хотите начать регистрацию нажмите Enter>> ");
+                ResetColor();
                 ConsoleKey keyPressed;
                 ConsoleKeyInfo keyInfo = ReadKey(true);
                 keyPressed = keyInfo.Key;
@@ -155,8 +162,17 @@ namespace ConsoleApp8
                 {
                     Main(args);
                 }
+
+                else if (keyPressed == ConsoleKey.Enter)
+                {
+                    goto d;
+                }
                 ReadKey(true);
-                ResetColor();
+
+
+               
+                Clear();
+                d:
                 ForegroundColor = ConsoleColor.Yellow;
                 WriteLine("\nЧто бы зарегестрироваться введите :");
                 ResetColor();
